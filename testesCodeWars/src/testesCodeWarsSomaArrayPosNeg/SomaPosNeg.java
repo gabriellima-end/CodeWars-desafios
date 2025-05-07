@@ -24,18 +24,11 @@ public class SomaPosNeg {
 		int contaNumPos = 0;
 		int somaNumNeg = 0;
 		
-		//TESTANDO ESSA STRING
-		while(true) {
-		if(input.equals(null)) {
+		if(input == null || input.length == 0) {
 			
-			int[] emptyArray = {};
-			
-			return emptyArray;
-			
-			}
-		break;
+			return new int[0];
 		}
-		//-------------------------
+			
 		for(int numero : input) {
 			
 			if(numero>=1) {
@@ -55,4 +48,4 @@ public class SomaPosNeg {
 	
 }
 
-//INCOMPLETO
+//COMPLETO
