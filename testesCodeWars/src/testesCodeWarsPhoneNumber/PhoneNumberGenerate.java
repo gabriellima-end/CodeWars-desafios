@@ -20,11 +20,31 @@ public class PhoneNumberGenerate {
 	
 	public static String createPhoneNumber(int[] numbers) {
 	    
-		String format = String.valueOf(numbers);
+		StringBuilder format = new StringBuilder();
 		
-		String numFormatString = "("+format.substring(0,3)+") "+format.substring(3,6)+"-"+format.substring(6,10);
+		format.append("(");
+		for(int i = 0; i<3 ; i++) {
+			
+			format.append(numbers[i]);
+			
+		}
+		
+		format.append(") ");
+		for(int i = 3; i<6; i++) {
+			
+			format.append(numbers[i]);
+			
+		}
+		
+		format.append("-");
+		for(int i = 6; i<10; i++) {
+			
+			format.append(numbers[i]);
+		}
 	    
-	    return numFormatString;
+		
+		
+	    return format.toString();
 	  }
 	
 }
