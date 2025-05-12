@@ -23,27 +23,20 @@ public class PhoneNumberGenerate {
 		StringBuilder format = new StringBuilder();
 		
 		format.append("(");
-		for(int i = 0; i<3 ; i++) {
-			
-			format.append(numbers[i]);
-			
+		for(int i = 0; i<3 ; i++) {	
+			format.append(numbers[i]);			
 		}
 		
 		format.append(") ");
-		for(int i = 3; i<6; i++) {
-			
-			format.append(numbers[i]);
-			
+		for(int i = 3; i<6; i++) {	
+			format.append(numbers[i]);	
 		}
 		
 		format.append("-");
-		for(int i = 6; i<10; i++) {
-			
+		for(int i = 6; i<10; i++) {	
 			format.append(numbers[i]);
 		}
 	    
-		
-		
 	    return format.toString();
 	  }
 	
