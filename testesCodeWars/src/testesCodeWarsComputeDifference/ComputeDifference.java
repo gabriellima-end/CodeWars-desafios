@@ -1,63 +1,74 @@
 package testesCodeWarsComputeDifference;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class ComputeDifference {
 
 	
 	public static void main(String[] args) {
 		
-		int[] listaUm = {1,2,3,4,5};
-		int[] listaDois = {1,2,3,4,5,6,7,8};
+		int[] listaUm = {1,2};
+		int[] listaDois = {1};
 		
-		boolean teste = listaUm.equals(listaDois);
+		int[] respostaDifference = arrayDiff(listaUm, listaDois);
 		
-		if(!teste) {
-			
-			
-			
-		}
-		
-		System.out.println(teste);
-		
-		//System.out.println(arrayDiff(listaUm, listaDois));
+		System.out.println(Arrays.toString(respostaDifference));
 		
 	}
 	
 	
 	public static int[] arrayDiff(int[] a, int[] b) {
-	    
-	    List<Integer> resposta = new ArrayList<>();
-		boolean igualdade = a.equals(b);
-
 		
-		if(igualdade) {
-			
-			List<Integer> intListA = Arrays.stream(a).boxed().collect(Collectors.toList());
-			List<Integer> intListB = Arrays.stream(b).boxed().collect(Collectors.toList());
-			
-			
-			//PEGANDO ELEMENTOS UNICOS DA LISTA A
-			for(int elemento : intListA) {
+		
+		
+		int contador = 0;
+		int indice = 0;
+		
+		
+		for(int elemento : a) {
+			boolean countBool = false;
+			for(int elementoB : b) {
 				
-				if(!intListB.contains(elemento)) {
+				if(elemento == elementoB) {
 					
-					resposta.add(elemento);
-					
+					countBool = true;
+					break;
 				}
+				
 			}
 			
-			//PEGANDO ELEMENTOS UNICOS DA LISTA B
-			//DESENVOLVER
-		
+			if(!countBool) {
+				
+				contador++;
+			}
 		}
 		
-			
+		int[] resultadoArray = new int[contador];
 		
-	    return a;
+		for(int elemento : a) {
+			boolean countBool = false;
+			for(int elementoB : b) {
+				
+				if(elemento == elementoB) {
+					
+					countBool = true;
+					
+				}
+				
+			}
+			
+			if(!countBool) {
+				
+				resultadoArray[indice++] = elemento;
+				
+			}
+			
+		}
+		
+		
+		
+		
+		return resultadoArray;
 	}
 }
 
