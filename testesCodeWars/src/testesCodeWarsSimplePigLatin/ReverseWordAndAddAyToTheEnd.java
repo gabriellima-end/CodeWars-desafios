@@ -6,21 +6,18 @@ public class ReverseWordAndAddAyToTheEnd {
 
 	public static void main(String[] args) {
 		
-		String word = "This is my string!";
+		String word = "Hello world!";
 		
 		System.out.println(pigIt(word));
 		
 	}
-	
-	
 	
 	public static String pigIt(String str) {
         
 		String[] splitSentence = str.split(" ");
 		
 		StringBuilder result = new StringBuilder(); 
-		
-		
+
 		for(String word : splitSentence) {
 			
 //			char special = '!';
@@ -28,15 +25,20 @@ public class ReverseWordAndAddAyToTheEnd {
 //			char lastCaracter = word.charAt(lenght - 1);
 			
 			if(word.matches("[a-zA-Z]+")) {
-			result.append(word.substring(1));
-			result.append(word.charAt(0));
-			result.append("ay");
-			}else {
-				word = word.replace("!", "");
+				
 				result.append(word.substring(1));
 				result.append(word.charAt(0));
 				result.append("ay");
-				result.append("!");
+				
+			}else {
+				
+				result.append(word);
+//				word = word.replace("!", "");
+//				result.append(word.substring(1));
+//				result.append(word.charAt(0));
+//				result.append("ay");
+//				result.append("!");
+				
 			}
 			
 			
