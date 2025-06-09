@@ -6,44 +6,24 @@ public class BreakCamelCase {
 	
 	public static void main(String[] args) {
 		
-		String originalSentence = "camelCaseOriginal";
+		String originalSentence = "camelCasingTest";
 		
-		char[] charSentenceArray = originalSentence.toCharArray();
+		System.out.println(camelCase(originalSentence));
 		
-		System.out.println(charSentenceArray);
-		
-		char spaceLetter = ' ';
-		
-		StringBuffer buffer = new StringBuffer(new String(charSentenceArray));
-		
-		
-		
-		for(int i = 0; i<charSentenceArray.length; i++) {
-			
-			if(Character.isUpperCase(charSentenceArray[i])) {
-				
-				int countPosition = 0;
-				
-				countPosition = i;
-				
-				buffer.insert(countPosition, " ");
-				System.out.println(countPosition);
-			}
-			
-			
-			
-		}
-		
-		System.out.println(buffer);
+		//String[] resultSentence = originalSentence.split("(?=[A-Z])");
+
+		//System.out.println(Arrays.toString(resultSentence).replace("[", "").replace(",", "").replace("]", ""));
 		
 		
 	}
 	
 	public static String camelCase(String input) {
 		
+		String[] resultSentence = input.split("(?=[A-Z])");
 		
+		String result = Arrays.toString(resultSentence).replace("[", "").replace(",", "").replace("]", "");
 		
-	    return null;
+	    return result;
 	  }
 	
 }
